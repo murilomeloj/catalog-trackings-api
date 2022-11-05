@@ -28,7 +28,7 @@ app.post("/registerCart", async (req, res) => {
             "type": "application/vnd.iris.eventTrack+json",
             "uri": "/event-track",
             "resource": {
-                "category": "testeApiMuriloNumeroFim",
+                "category": "Pratos mais escolhidos",
                 "action": item.trim()
             }
         });
