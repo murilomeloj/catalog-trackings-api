@@ -2,10 +2,9 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 const https = require('https')
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 app.use(express.json());
-
 app.listen(port, () => {
     console.log("server is running");
 });
@@ -15,7 +14,7 @@ const api = axios.create({
         rejectUnauthorized: false
     })
 })
-api.defaults.headers.common['Authorization'] = process.env.SECRET_API
+api.defaults.headers.common['Authorization'] = process.env.SECRET_API || "Key dGFrZWJsaXBjZGEyOm44NEF6RG14UlBCb1h1UzJHRmY1"
 
 app.post("/registerCart", async (req, res) => {
     const { items } = req.body;
