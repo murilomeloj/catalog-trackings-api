@@ -17,7 +17,7 @@ const api = axios.create({
 api.defaults.headers.common['Authorization'] = process.env.SECRET_API;
 
 app.post("/registerCart", async (req, res) => {
-    const { items } = req.body;
+    const { items, apiKey } = req.body;
     const products = items.split(',');
     console.log(products.length);
   for(let item of products) {
