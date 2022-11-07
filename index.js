@@ -35,5 +35,5 @@ app.post("/registerCart", async (req, res) => {
         });
         console.log(data);
     };
-    res.send('Relatórios Criados');
+    res.send(data);
 });
