@@ -35,5 +35,5 @@ app.post("/registerCart", async (req, res) => {
         });
         console.log(data);
     };
-    res.send(data.json());
+    res.send(await data.json());
 });
