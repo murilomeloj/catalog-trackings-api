@@ -14,11 +14,10 @@ const api = axios.create({
         rejectUnauthorized: false
     })
 })
-
+api.defaults.headers.common['Authorization'] = process.env.SECRET_API;
 
 app.post("/registerCart", async (req, res) => {
-    const { items, apiKey } = req.body;
-    api.defaults.headers.common['Authorization'] = apiKey;
+    const { items } = req.body;
     const products = items.split(',');
     console.log(products.length);
   for(let item of products) {
@@ -35,5 +34,5 @@ app.post("/registerCart", async (req, res) => {
         });
         console.log(data);
     };
-    res.send(await data.json());
+    res.send('Relatórios Criados');
 });
